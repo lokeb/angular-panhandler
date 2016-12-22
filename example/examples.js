@@ -1,7 +1,7 @@
 /*globals angular */
 (function(){
   'use strict';
-  angular.module('pannableExamples', ['panhandler'])
+  angular.module('pannableExamples', ['pannable'])
     .controller('Example1', function Example1($scope) {
       $scope.gridItems = generateGrid(30);
     });

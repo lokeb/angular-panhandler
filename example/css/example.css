@@ -1,11 +1,12 @@
+body {
+  font-size: 15px;
+}
 .examples {
   padding: 2em;
 }
 .grid {
-  border: 8px solid #FFFFa0;
-  width: 512px;
-  height: 512px;
-  overflow: hidden;
+  outline: 0.2em solid #FFFFa0;
+  background: blue;
 }
 .grid-block {
   text-align: center;
@@ -18,6 +19,8 @@
   padding: 1em;
   float: left;
 }
-.panhandler-wrap {
+.container {
+  width: 40em;
+  height: 40em;
   background: #f7f7f7;
 }

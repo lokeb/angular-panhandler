@@ -1,8 +1,8 @@
 {
-  "name": "angular-panhandler",
-  "version": "1.2.0",
+  "name": "angular-pannable",
+  "version": "1.0.0",
   "description": "Pan to scroll DOM elements",
-  "main": "dist/angular-panhandler.js",
+  "main": "dist/angular-pannable.js",
   "scripts": {
     "test": "npm test"
   },
@@ -12,7 +12,7 @@
     "pan",
     "draggable"
   ],
-  "author": "Nathan Bleigh",
+  "author": "Loknath Bharti",
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -25,6 +25,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lokeb/angular-panhandler.git"
+    "url": "https://github.com/lokeb/angular-pannable.git"
   }
 }
