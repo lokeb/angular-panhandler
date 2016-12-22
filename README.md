@@ -7,6 +7,8 @@
 
 Pan Directive for Angular.js - Drag to scroll behavior
 
+### [Documentation](https://lokeb.github.io/angular-pannable/)
+
 ### Usage
 
 Add ```pannable``` as an attribute to the element on which you would like to enable panning.  Thats it!  If you would like to make sure your inner content fits to a certain size, you can specify a ```pannable-content-{width|height}``` attribute.
