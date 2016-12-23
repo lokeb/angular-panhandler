@@ -51,6 +51,7 @@
           }
           this.grabCursor();
           this.makeInteractive();
+          console.log(this.pos);
           this.setPosition(this.pos[0], this.pos[1]);
         },
         tick: function(){
@@ -113,6 +114,8 @@
         },
         updateDrag: function(e){
           var curr = this.positionFromEvent(e);
+          console.info("stored element position: ", this.pos);
+          console.log("current cursor position: ", curr);
           if(curr[0] !== this.curr[0] || curr[1] !== this.curr[1]){
             this.dirty = true;
             this.curr = [curr[0],curr[1]];

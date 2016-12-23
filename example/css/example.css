@@ -7,6 +7,8 @@ body {
 .grid {
   outline: 0.2em solid #FFFFa0;
   background: blue;
+  height: 100em;
+  width: 100em;
 }
 .grid-block {
   text-align: center;
@@ -16,8 +18,10 @@ body {
   font-size: 3em;
   color: #a0a0a0;
   line-height: 50px;
-  padding: 1em;
+  /*padding: 1em;*/
   float: left;
+  width: 5em;
+  height: 5em;
 }
 .container {
   width: 40em;
