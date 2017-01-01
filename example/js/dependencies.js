@@ -1,5 +1,5 @@
-/*! angular-pannable - v1.0.0 - 2016-12-22
-* Copyright (c) 2016 ; Licensed MIT %> */
+/*! angular-pannable - v1.0.0 - 2017-01-02
+* Copyright (c) 2017 ; Licensed MIT %> */
 (function(window, document, undefined) {'use strict';
 
 /**

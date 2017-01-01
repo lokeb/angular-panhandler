@@ -19,8 +19,8 @@
             <input name="preventPanItem" type="checkbox" ng-model="preventPanItem" />
             <label for="preventPanItem">Prevent Panning on items</label>
             <div class="container">
-              <div class="grid" pannable-content-width="100em" pannable-prevent-pan="{{preventPan}}">
-                <div class="grid-block" pannable pannable-offset-x="5em" pannable-offset-y="1em" ng-cloak ng-class="{iCannotScroll: preventPanItem==true}" ng-repeat="item in gridItems">
+              <div class="grid" pannable pannable-content-width="100em" pannable-prevent-pan="{{preventPan}}" pannable-offset-x="-10em">
+                <div class="grid-block" pannable ng-cloak ng-class="{iCannotScroll: preventPanItem==true}" ng-repeat="item in gridItems">
                   <span class="grid-number" ng-cloak>{{$index + 1}}</span>
                 </div>
               </div>

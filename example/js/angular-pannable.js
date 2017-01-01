@@ -1,7 +1,9 @@
-/*! angular-pannable - v1.0.0 - 2016-12-22
-* Copyright (c) 2016 ; Licensed MIT %> */
-/*! angular-pannable - v1.0.0 - 2016-12-22
-* Copyright (c) 2016 ; Licensed MIT %> */
+/*! angular-pannable - v1.0.0 - 2017-01-02
+* Copyright (c) 2017 ; Licensed MIT %> */
+/*! angular-pannable - v1.0.0 - 2017-01-02
+* Copyright (c) 2017 ; Licensed MIT %> */
+//TODO: Prevent panning at the limits
+//TODO: Prevent panning propagation
 (function(){
   'use strict';
   angular.module('pannable', [])
@@ -51,7 +53,6 @@
           }
           this.grabCursor();
           this.makeInteractive();
-          console.log(this.pos);
           this.setPosition(this.pos[0], this.pos[1]);
         },
         tick: function(){
@@ -62,8 +63,10 @@
           this.loop = window.requestAnimationFrame(angular.bind(this,this.tick));
         },
         updatePosition: function(){
-          var x = this.clampX(this.startPos[0] + (this.curr[0] - this.origin[0]));
-          var y = this.clampY(this.startPos[1] + (this.curr[1] - this.origin[1]));
+          var x = this.pos[0] + this.curr[0] - this.origin[0];
+          var y = this.pos[1] + this.curr[1] - this.origin[1];
+          this.origin = this.curr;
+
           this.pos = [x,y];
           this.setPosition(x,y);
         },
@@ -75,12 +78,6 @@
             this.draggable.css('margin-left',x + 'px');
             this.draggable.css('margin-top',y + 'px');
           }
-        },
-        clampX: function(val){
-          return Math.max(Math.min(0,val),this.minX);
-        },
-        clampY: function(val){
-          return Math.max(Math.min(0,val),this.minY);
         },
         cacheBounds: function(){
           this.contentDimensions = [getWidth(this.draggable),getHeight(this.draggable)];
@@ -98,6 +95,9 @@
           if ( this.findParentNoScroll(e.target, 'iCannotScroll') ) {
             return false;
           }
+
+          e.stopPropagation();
+
           this.origin = this.positionFromEvent(e);
           this.startPos = [this.pos[0],this.pos[1]];
           this.cacheBounds();
@@ -114,8 +114,6 @@
         },
         updateDrag: function(e){
           var curr = this.positionFromEvent(e);
-          console.info("stored element position: ", this.pos);
-          console.log("current cursor position: ", curr);
           if(curr[0] !== this.curr[0] || curr[1] !== this.curr[1]){
             this.dirty = true;
             this.curr = [curr[0],curr[1]];
